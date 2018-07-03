@@ -1,0 +1,11 @@
+.postinput {
+    margin-top: 100px;
+    max-width: 50%;
+}
+input {
+    font-size: large;
+}
+textarea {
+    resize: none;
+    font-size: large;
+}

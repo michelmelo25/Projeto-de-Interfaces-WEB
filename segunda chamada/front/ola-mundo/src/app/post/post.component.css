@@ -1,0 +1,16 @@
+h6 {
+    font-weight: bold;
+}
+h5 {
+    font-weight: bold;
+    font-size: large;
+    color: red;
+}
+textarea {
+    font-size: large;
+    max-width: 50%;
+    resize: none;
+}
+.modal-footer {
+    max-width: 30%;
+}

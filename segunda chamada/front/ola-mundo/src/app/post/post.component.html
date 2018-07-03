@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h6>{{post.nomePessoa}}</h6>
+    </div>
+    <div class="panel-body">
+        <p *ngIf="!isEditing">{{post.texto}}</p>
+        <form *ngIf="isEditing" class="form-group">
+            <textarea class="form-control" rows="3" [(ngModel)]="post.texto" name="postinput">{{post.texto}}</textarea>
+            <p></p>
+            <div class="btn-justified">
+                <button type="button" class="btn btn-primary" (click)="onClickEdit($event)">Conclude
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button type="button" class="btn" (click)="isEditing = false">Cancel
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="!isEditing && !isDeleting" class="panel-footer">
+        <div class="btn-justified">
+            <button type="button" class="btn btn-primary" title="Like this post" (click)="onClickLike($event)">Like
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+                <span class="badge">{{post.qtdLikes}}</span>
+            </button>
+            <button type="button" class="btn btn-danger" title="Delete this post" (click)="isDeleting = !isDeleting">Delete
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+            <button type="button" class="btn btn-success" title="Edit this post" (click)="isEditing = !isEditing">Edit
+                <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="isDeleting" class="container">
+        <div class="modal-body">
+            <h5>Delete this post?</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="onClickDelete($event)">Confirm
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+            <button type="button" class="btn" (click)="isDeleting = false">Cancel
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </div>
+    </div>
+</div>

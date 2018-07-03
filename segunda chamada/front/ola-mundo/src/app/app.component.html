@@ -1,0 +1,4 @@
+<div class="container" id="mainbody">
+    <app-navbar></app-navbar>
+    <router-outlet (deactivate)="catchPost($event)" (activate)="putPost($event)"></router-outlet>
+</div>

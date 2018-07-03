@@ -1,0 +1,10 @@
+<div class="container timeline">
+    <ul *ngIf="posts">
+        <li *ngFor="let post of posts">
+            <app-post [post]="post" (clickLike)="addLike($event)" (clickDelete)="remove($event)" (clickEdit)="edit($event)">
+            </app-post>
+        </li>
+    </ul>
+    <app-loading-screen *ngIf="!posts || !posts.length">
+    </app-loading-screen>
+</div>

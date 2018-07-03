@@ -1,0 +1,16 @@
+<div class="container postinput">
+    <form>
+        <div class="form-group">
+            <label for="author">Autor</label>
+            <input type="text" class="form-control" id="author" [(ngModel)]="nomePessoa" name="autor">
+            <label for="postcontent">Conteúdo do post</label>
+            <textarea class="form-control" id="postcontent" rows="3" [(ngModel)]="texto" name="texto"></textarea>
+            <div role="group" aria-label="post button">
+                <p></p>
+                <button type="button" class="btn btn-success" (click)="onNewPost($event)">Postar
+                    <span class="glyphicon glyphicon-send"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
